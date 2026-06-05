@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Diagrama de Classes" id="diagrama-classes-uml">
+    <mxGraphModel dx="2200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3000" pageHeight="2100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="titulo" value="Sistema de Conta Bancária Digital" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=34;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="850" y="40" width="1300" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="Bloqueavel" value="&lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;Bloqueavel&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;font-size:18px;line-height:1.7;&quot;&gt;+ bloquear(): void&lt;br&gt;+ desbloquear(): void&lt;br&gt;+ isAtiva(): boolean&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontColor=#000000;align=left;verticalAlign=top;spacing=28;" vertex="1" parent="1">
+          <mxGeometry x="170" y="220" width="600" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="ContaBancaria" value="&lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;abstract&amp;gt;&amp;gt;&lt;br&gt;ContaBancaria&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;font-size:18px;line-height:1.55;&quot;&gt;- numero: String&lt;br&gt;- titular: String&lt;br&gt;# saldo: double&lt;br&gt;- ativa: boolean&lt;br&gt;&lt;br&gt;+ ContaBancaria(numero, titular, saldoInicial)&lt;br&gt;+ calcularRendimento(): double&lt;br&gt;+ depositar(valor): void&lt;br&gt;+ sacar(valor): void&lt;br&gt;+ bloquear(): void&lt;br&gt;+ desbloquear(): void&lt;br&gt;+ isAtiva(): boolean&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontColor=#000000;align=left;verticalAlign=top;spacing=28;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="180" width="850" height="520" as="geometry"/>
+        </mxCell>
+        <mxCell id="Tributavel" value="&lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;Tributavel&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;font-size:18px;line-height:1.7;&quot;&gt;+ calcularImposto(): double&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontColor=#000000;align=left;verticalAlign=top;spacing=28;" vertex="1" parent="1">
+          <mxGeometry x="2230" y="230" width="600" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="ContaCorrente" value="&lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;b&gt;ContaCorrente&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;font-size:18px;line-height:1.55;&quot;&gt;- LIMITE_CHEQUE_ESPECIAL: double&lt;br&gt;- ALIQUOTA_IOF_SAQUE: double&lt;br&gt;- ultimoImpostoSaque: double&lt;br&gt;&lt;br&gt;+ calcularRendimento(): double&lt;br&gt;+ sacar(valor): void&lt;br&gt;+ calcularImposto(): double&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontColor=#000000;align=left;verticalAlign=top;spacing=28;" vertex="1" parent="1">
+          <mxGeometry x="170" y="920" width="700" height="360" as="geometry"/>
+        </mxCell>
+        <mxCell id="ContaPoupanca" value="&lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;b&gt;ContaPoupanca&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;font-size:18px;line-height:1.55;&quot;&gt;- TAXA_RENDIMENTO_MENSAL: double&lt;br&gt;- ALIQUOTA_IMPOSTO_RENDIMENTO: double&lt;br&gt;- DIAS_MINIMOS_ENTRE_SAQUES: int&lt;br&gt;- diasDesdeUltimoSaque: int&lt;br&gt;&lt;br&gt;+ calcularRendimento(): double&lt;br&gt;+ calcularImposto(): double&lt;br&gt;+ sacar(valor): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontColor=#000000;align=left;verticalAlign=top;spacing=28;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="900" width="850" height="400" as="geometry"/>
+        </mxCell>
+        <mxCell id="ContaSalario" value="&lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;b&gt;ContaSalario&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;font-size:18px;line-height:1.55;&quot;&gt;- saqueRealizadoNoMes: boolean&lt;br&gt;&lt;br&gt;+ calcularRendimento(): double&lt;br&gt;+ sacar(valor): void&lt;br&gt;+ iniciarNovoMes(): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontColor=#000000;align=left;verticalAlign=top;spacing=28;" vertex="1" parent="1">
+          <mxGeometry x="2230" y="940" width="600" height="320" as="geometry"/>
+        </mxCell>
+        <mxCell id="SaldoInsuficienteException" value="&lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;b&gt;SaldoInsuficienteException&lt;/b&gt;&lt;br&gt;extends RuntimeException&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;font-size:18px;line-height:1.55;&quot;&gt;- saldoAtual: double&lt;br&gt;- valorSolicitado: double&lt;br&gt;&lt;br&gt;+ getSaldoAtual(): double&lt;br&gt;+ getValorSolicitado(): double&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontColor=#000000;align=left;verticalAlign=top;spacing=28;" vertex="1" parent="1">
+          <mxGeometry x="170" y="1540" width="700" height="330" as="geometry"/>
+        </mxCell>
+        <mxCell id="OperacaoInvalidaException" value="&lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;b&gt;OperacaoInvalidaException&lt;/b&gt;&lt;br&gt;extends Exception&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;font-size:18px;line-height:1.55;&quot;&gt;- operacao: String&lt;br&gt;- numeroConta: String&lt;br&gt;&lt;br&gt;+ getOperacao(): String&lt;br&gt;+ getNumeroConta(): String&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontColor=#000000;align=left;verticalAlign=top;spacing=28;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="1540" width="760" height="330" as="geometry"/>
+        </mxCell>
+        <mxCell id="Main" value="&lt;div style=&quot;text-align:center;font-size:20px;&quot;&gt;&lt;b&gt;Main&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;font-size:18px;line-height:1.55;&quot;&gt;+ main(args): void&lt;br&gt;&lt;br&gt;Cria uma List&amp;lt;ContaBancaria&amp;gt; com uma conta de cada tipo e chama calcularRendimento().&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontColor=#000000;align=left;verticalAlign=top;spacing=28;" vertex="1" parent="1">
+          <mxGeometry x="2230" y="1550" width="600" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="eContaBloqueavel" value="" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="ContaBancaria" target="Bloqueavel">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eContaCorrenteHeranca" value="" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="ContaCorrente" target="ContaBancaria">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eContaPoupancaHeranca" value="" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="ContaPoupanca" target="ContaBancaria">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eContaSalarioHeranca" value="" style="endArrow=block;endFill=0;html=1;rounded=0;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="ContaSalario" target="ContaBancaria">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eCorrenteTributavel" value="" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="ContaCorrente" target="Tributavel">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="800"/>
+              <mxPoint x="2530" y="800"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ePoupancaTributavel" value="" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="ContaPoupanca" target="Tributavel">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1435" y="780"/>
+              <mxPoint x="2530" y="780"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eContaSaldoException" value="" style="endArrow=open;html=1;dashed=1;rounded=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="ContaBancaria" target="SaldoInsuficienteException">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1220" y="1420"/>
+              <mxPoint x="520" y="1420"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eContaOperacaoException" value="" style="endArrow=open;html=1;dashed=1;rounded=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="ContaBancaria" target="OperacaoInvalidaException">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1460" y="1420"/>
+              <mxPoint x="1390" y="1420"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eMainConta" value="" style="endArrow=open;html=1;dashed=1;rounded=0;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="Main" target="ContaBancaria">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2530" y="1420"/>
+              <mxPoint x="1690" y="1420"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legenda" value="Legenda: seta contínua = herança | seta tracejada com triângulo = implementação de interface | seta tracejada aberta = uso/lançamento de exceção" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=18;fontColor=#000000;align=center;verticalAlign=middle;spacing=16;" vertex="1" parent="1">
+          <mxGeometry x="620" y="1970" width="1760" height="70" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
